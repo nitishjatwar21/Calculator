@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<style>
+table, th, td {
+  border: none;
+  padding: 2px;
+  border-collapse: collapse;
+  margin: 0px;
+  font-size: 25px;
+  
+  border-color: #D3D3D3;
+}
+td {
+	width: 43px;
+}
+table {
+  border-spacing: 1px;
+  background-color: #D3D3D3;
+}
+tr{
+	height:50px;
+	background-color: #dadedf;
+}
+.number {
+	background-color:#ffffff ;
+	border: none;
+	font-size: 22px;
+	font-weight: 900;
+	color: ;
+	width:100%; 
+	height:100%;
+	font-family: arial bold;
+}
+.special{
+	background-color:#f2f3f4;
+	font-family: monotype coursiva;
+	font-size: 27px;
+	border: none;
+	color: ;
+	width:100%; 
+	height:100%;
+}
+.delete{
+	background-color:#f2f3f4;
+	
+	font-size: 22px;
+	border: none;
+	color: ;
+	width:100%; 
+	height:100%;
+}
+.number:hover {
+    background-color: darkgrey;
+    color: whitesmoke;
+}
+
+.number:active {
+    background-color: dimgrey;
+    color: white;
+}
+
+.special:hover {
+background-color: darkgrey;
+    color: whitesmoke;
+}
+
+.special:active {
+    background-color: dimgrey;
+    color: white;
+}
+.delete:hover {
+    background-color:red;
+    color: whitesmoke;
+}
+
+.delete:active {
+    background-color: dimgrey;
+    color: white;
+}
+</style>
+<script type="text/javascript">
+	function str() {
+		if (calculator.display.value.length<1){
+			calculator.display.value+='1/';
+		} else{
+			calculator.display.value+='*1/'
+		}
+	}
+	function sqr() {
+		if (calculator.display.value.length<1){
+			calculator.display.value+='1**2';
+		} else{
+			calculator.display.value+='**2'
+		}
+
+	}
+</script>
+
+</head>
+<body style="background-color: #dddddd;">
+	<div id="frame" style="margin: auto; width:85%; height:75%; margin-top: 15%">
+		<form name="calculator" style="width:255PX; height:60%; margin: auto; ">
+			<table name="table1" style="width:225px; height:70%; ">
+	        	<tr name: "row1">
+	        		<th name="th1" colspan="4"><input type="text"  style="width:255PX ;height:100%;padding: 0px; border-radius: 4px; font-weight: 900;font-size: 24px;font-family: arial bold;
+}" name="display" id="display" ></th>
+	        	</tr>
+				<tr>
+					<td><input class="special" type="button"  name="(" value="(" onclick="calculator.display.value+= '('"></td>
+	    			<td><input class="special" type="button"  name=")"  value=")" onclick="calculator.display.value+= ')'"></td>
+	   			 	<td><input class="special" type="button"  name="sq" style="font-family: monotype coursiva"  value="x²" onclick="sqr()"></td>
+	    			<td><input class="special" type="button"  name="div"  value="1/x" onclick="str()"></td>
+	   
+	  			</tr>
+	  			<tr>
+				  	<td><input class="delete" type="button"  name="clear" value="AC" onclick="calculator.display.value='' "></td>
+				  	<td><input class="delete" type="button"  name="del" value="C" onclick="calculator.display.value = calculator.display.value.substring(0,calculator.display.value.length - 1)" ></td>
+				  	<td><input class="special" type="button" name="exp" value="e" onclick="calculator.display.value+='2.7'"></td>
+				  	<td><input class="special" type="button"   name="%" value="÷" onclick="calculator.display.value+= '/'"></td>
+				   
+	 			</tr>
+	 			<tr>
+				  	<td height: 100px><input class="number" type="button"  name="7" value="7" onclick="calculator.display.value+= '7'"></td>
+				    <td height: 100px><input class="number" type="button"  name="8" value="8" onclick="calculator.display.value+= '8'"></td>
+				    <td height: 100px><input class="number" type="button"  name="9" value="9" onclick="calculator.display.value+= '9'"></td>
+				    <td height: 100px><input class="special" type="button" name="X" value="×" onclick="calculator.display.value+= '*'"></td>
+				   
+				</tr>
+				<tr>
+				  	<td height: 100px><input class="number" type="button"  name="4" value="4" onclick="calculator.display.value+= '4'"></td>
+				  	<td height: 100px><input class="number" type="button"  name="5" value="5" onclick="calculator.display.value+= '5'"></td>
+				    <td height: 100px><input class="number" type="button"  name="6" value="6" onclick="calculator.display.value+= '6'"></td>
+				  	<td height: 100px><input class="special" type="button" name="-" value="_" onclick="calculator.display.value+= '-'"></td>
+				  	
+				 </tr>
+				 <tr>
+				  	<td height: 100px><input class="number" type="button"  name="1" value="1" onclick="calculator.display.value+= '1'"></td>
+				    <td height: 100px><input class="number" type="button"  name="2" value="2" onclick="calculator.display.value+= '2'"></td>
+				    <td height: 100px><input class="number" type="button"  name="3" value="3" onclick="calculator.display.value+= '3'"></td>
+				    <td height: 100px><input class="special" type="button"  name="+" value= + onclick="calculator.display.value+= '+'"></td>
+				  
+				 </tr>
+				 <tr>
+					<td><input class="special" type="button" name="pi"  value="π" onclick="calculator.display.value+='3.14'"></td>
+				    <td><input class="number" type="button"  name="0"  value=0 onclick="calculator.display.value+= '0'"></td>
+				    <td><input class="special" type="button" name="."  value=. onclick="calculator.display.value+= '.'"></td>
+				    <td><input class="special" type="button" name="equal_to" value="=" onclick="calculator.display.value=eval(calculator.display.value)"></td>
+				   
+				</tr>
+		    </table>
+		</form>
+	<div>
+	
+	
+</body>
+</html>
