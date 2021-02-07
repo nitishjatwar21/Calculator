@@ -1,0 +1,83 @@
+Top.mainloop()
+from tkinter import*
+Screen=Tk()
+Screen.title("Smart Calculator")
+Screen.geometry('365x400')
+def click(number):
+    global operator
+    operator +=str(number)
+    tex.set(operator)
+
+
+def clear():
+    global operator
+    operator =''
+    tex.set(operator)
+
+def equal():
+    global operator
+    result=eval(operator)
+    tex.set(result)
+
+
+
+tex=StringVar()
+operator =""
+
+
+
+ent1=Entry(Screen,bg='orange',font=("arial",20,"italic bold"),bd='30',justify='right',textvariable=tex)
+ent1.grid(row=(0),columnspan=(4))
+
+bnt7=Button(Screen,text="7",font=("arial",20,"italic bold"),bd='20',command=lambda:click(7),activebackground='green',activeforeground='red')
+bnt7.grid(row=(1),column=(0))
+
+bnt8=Button(Screen,text="8",font=("arial",20,"italic bold"),bd='20',command=lambda:click(8),activebackground='green',activeforeground='red')
+bnt8.grid(row=(1),column=(1))
+
+bnt9=Button(Screen,text="9",font=("arial",20,"italic bold"),bd='20',command=lambda:click(9),activebackground='green',activeforeground='red')
+bnt9.grid(row=(1),column=(2))
+
+bntadd=Button(Screen,text="+",font=("arial",20,"italic bold"),bd='20',command=lambda:click('+'),activebackground='green',activeforeground='red')
+bntadd.grid(row=(1),column=(3))
+
+bnt4=Button(Screen,text="4",font=("arial",20,"italic bold"),bd='20',command=lambda:click(4),activebackground='green',activeforeground='red')
+bnt4.grid(row=(2),column=(0))
+
+bnt5=Button(Screen,text="5",font=("arial",20,"italic bold"),bd='20',command=lambda:click(5),activebackground='green',activeforeground='red')
+bnt5.grid(row=(2),column=(1))
+
+bnt6=Button(Screen,text="6",font=("arial",20,"italic bold"),bd='20',command=lambda:click(6),activebackground='green',activeforeground='red')
+bnt6.grid(row=(2),column=(2))
+
+bntsub=Button(Screen,text="-",font=("arial",20,"italic bold"),bd='20',command=lambda:click('-'),activebackground='green',activeforeground='red')
+bntsub.grid(row=(2),column=(3))
+
+bnt1=Button(Screen,text="1",font=("arial",20,"italic bold"),bd='20',command=lambda:click(1),activebackground='green',activeforeground='red')
+bnt1.grid(row=(3),column=(0))
+
+bnt2=Button(Screen,text="2",font=("arial",20,"italic bold"),bd='20',command=lambda:click(2),activebackground='green',activeforeground='red')
+bnt2.grid(row=(3),column=(1))
+
+bnt3=Button(Screen,text="3",font=("arial",20,"italic bold"),bd='20',command=lambda:click(3),activebackground='green',activeforeground='red')
+bnt3.grid(row=(3),column=(2))
+
+bntmul=Button(Screen,text="",font=("arial",20,"italic bold"),bd='20',command=lambda:click(''),activebackground='green',activeforeground='red')
+bntmul.grid(row=(3),column=(3))
+
+bnt0=Button(Screen,text="0",font=("arial",20,"italic bold"),bd='20',command=lambda:click(0),activebackground='green',activeforeground='red')
+bnt0.grid(row=(4),column=(0))
+
+bntclear=Button(Screen,text="C",font=("arial",20,"italic bold"),bd='20',command=clear,activebackground='green',activeforeground='red')
+bntclear.grid(row=(4),column=(1))
+
+bntequal=Button(Screen,text="=",font=("arial",20,"italic bold"),bd='20',command=equal,activebackground='green',activeforeground='red')
+bntequal.grid(row=(4),column=(2))
+
+bntdiv=Button(Screen,text="/",font=("arial",20,"italic bold"),bd='20',command=lambda:click('/'),activebackground='green',activeforeground='red')
+bntdiv.grid(row=(4),column=(3))
+
+
+
+
+Screen.mainloop()
