@@ -14,3 +14,4 @@ This is a basic calculator made with Vanilla JS,CSS3 and HTML5
 
   - Improved UI
   - Results along your queries !
+  - calculation made easy for small calculations
